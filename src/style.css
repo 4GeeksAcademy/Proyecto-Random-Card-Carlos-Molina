@@ -6,38 +6,69 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0f0f0;
+  background-color: green;
+  margin: 0;
 }
 
 .carta {
-  width: 100px;
-  height: 140px;
+  width: 20vw;
+  height: 30vw;
+  max-width: 400px;
+  max-height: 600px;
   border: 2px solid #000;
   border-radius: 10px;
   background-color: white;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.795);
   position: relative;
-  margin-bottom: 20px; /* Espacio entre la carta y el botón */
+  margin-bottom: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.carta-cabecera,
-.carta-pie {
-  font-size: 24px;
+.simboloArriba,
+.simboloAbajo {
+  font-size: calc(15px + 4vw);
   position: absolute;
 }
 
-.carta-cabecera {
-  top: 5px;
-  left: 5px;
+.simboloArriba {
+  top: 0%;
+  left: 5%;
 }
 
-.carta-pie {
-  bottom: 5px;
-  right: 5px;
+.simboloAbajo {
+  bottom: 0%;
+  right: 5%;
+  transform: rotate(180deg);
 }
 
-.simbolo {
-  font-size: 40px; /* Tamaño del símbolo */
-  text-align: center; /* Centrar el símbolo */
-  line-height: 140px; /* Centrar verticalmente */
+.simbolo-rojo {
+  color: red;
+}
+
+.numero {
+  font-size: calc(30px + 10vw);
+  text-align: center;
+  line-height: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+#boton {
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  background-color: white;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.795);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#boton:hover {
+  background-color: #dbdbdb;
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
 }

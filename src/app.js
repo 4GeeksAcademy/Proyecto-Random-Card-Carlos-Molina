@@ -4,7 +4,7 @@ import "./style.css";
 
 window.onload = function() {};
 
-const valores = [
+const numeros = [
   "A",
   "2",
   "3",
@@ -19,17 +19,23 @@ const valores = [
   "Q",
   "K"
 ];
-const simbolos = ["&#9829;", "&#9830;", "&#9827;", "&#9824;"]; // Corazón, Diamante, Trébol, Pica
+
+const simbolos = [
+  { simbolo: "&#9829;", clase: "simbolo-rojo" },
+  { simbolo: "&#9830;", clase: "simbolo-rojo" },
+  { simbolo: "&#9827;", clase: "" },
+  { simbolo: "&#9824;", clase: "" }
+];
 
 function obtenerCartaAleatoria() {
-  const valorAleatorio = valores[Math.floor(Math.random() * valores.length)];
+  const numeroAleatorio = numeros[Math.floor(Math.random() * numeros.length)];
   const simboloAleatorio =
     simbolos[Math.floor(Math.random() * simbolos.length)];
 
   return `
-        <div class="carta-cabecera">${valorAleatorio}</div>
-        <div class="simbolo">${simboloAleatorio}</div>
-        <div class="carta-pie">${valorAleatorio}</div>
+        <div class="simboloArriba ${simboloAleatorio.clase}">${simboloAleatorio.simbolo}</div>
+        <div class="numero">${numeroAleatorio}</div>
+        <div class="simboloAbajo ${simboloAleatorio.clase}">${simboloAleatorio.simbolo}</div>
     `;
 }
 
